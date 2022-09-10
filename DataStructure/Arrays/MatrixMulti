@@ -1,0 +1,46 @@
+package Javabasics;
+
+import java.util.Scanner;
+
+public class MatrixMul {
+
+	public static void main(String[] args) {
+		int n,m;
+		Scanner sc = new Scanner(System.in);
+		n = sc.nextInt();
+		m= sc.nextInt();
+		int i,j,k,mul=0;
+		int[][] m1 = new int[n][m];
+		
+		for(i=0;i<n;i++)
+		{
+			for(j=0;j<m;j++) {
+				m1[i][j] = sc.nextInt();
+			}
+		}
+		n = sc.nextInt();
+		m= sc.nextInt();
+		int[][] m2 = new int[n][m];
+		for(i=0;i<n;i++)
+		{
+			for(j=0;j<m;j++) {
+				m2[i][j] = sc.nextInt();
+			}
+		}
+		
+		int r = m1[0].length;
+		int c = m2[1].length;
+		int[][] m3 = new int[r][c];
+		
+		for(i=0;i<r;i++) {
+			for(j=0;j<c;j++) {
+				for(k=0;k<m1.length;k++) {
+					m3[i][j] += m1[i][k] * m2[k][j];
+				}
+				System.out.print(m3[i][j] +" ");
+			}
+			System.out.println();
+		}
+	}
+
+}
